@@ -40,7 +40,7 @@
 </head>
 <body>
   <div class="container">
-       <div class="box" onclick="openBox()">
+    
          <div class="clue">Venture forth towards the unit that cools, where the numbers three-one-one rule. Seek the treasure that's hidden near, where you can feel the excitement draw near.</div>
        </div>
        <div class="chest-container">
@@ -59,6 +59,109 @@
          <div class="air-particle"></div>
          <div class="air-particle"></div>
        </div>
+       <div class="magnifying-glass">
+   <div class="magnifying-glass-lens"></div>
+   <div class="magnifying-glass-handle"></div>
+   <div class="image-container">
+     <img src="mglass2.png" alt="Zoomable Image" class="zoomable-image">
+<!-- Replace with your own image URL -->
+     <div class="custom-cursor">
+   <!-- Content of the element with the custom cursor -->
+
+   </div>
+ </div>
+
+ <script>
+   // Get the lens and image elements
+   const lens = document.querySelector('.lens');
+   const image = document.querySelector('.image');
+
+   // Add mousemove event listener to the lens
+   lens.addEventListener('mousemove', handleMouseMove);
+
+   // Function to handle mousemove event on the lens
+   function handleMouseMove(event) {
+     // Get the position of the lens
+     const lensX = event.clientX - lens.offsetWidth / 2;
+     const lensY = event.clientY - lens.offsetHeight / 2;
+
+     // Set the position of the lens
+     lens.style.left = `${lensX}px`;
+     lens.style.top = `${lensY}px`;
+
+     // Calculate the position of the zoomed image
+     const zoomedX = (lensX / image.offsetWidth) * 100;
+     const zoomedY = (lensY / image.offsetHeight) * 100;
+
+     // Update the transform property of the image to achieve the magnifying effect
+     image.style.transform = `scale(2) translate(${zoomedX}px, ${zoomedY}px)`;
+
+     // Show the zoomed image
+     document.querySelector('.zoomed-image').style.opacity = 1;
+   }
+
+   // Add mouseleave event listener to the lens
+   lens.addEventListener('mouseleave', handleMouseLeave);
+
+   // Function to handle mouseleave event on the lens
+   function handleMouseLeave() {
+     // Reset the position of the lens
+     lens.style.left = '';
+     lens.style.top = '';
+
+     // Reset the transform property of the image
+     image.style.transform = '';
+
+     // Hide the zoomed image
+     document.querySelector('.zoomed-image').style.opacity = 0;
+   }
+ </script>
+
+ <script>
+   // Get the lens and image elements
+   const lens = document.querySelector('.lens');
+   const image = document.querySelector('.image');
+
+   // Add mousemove event listener to the lens
+   lens.addEventListener('mousemove', handleMouseMove);
+
+   // Function to handle mousemove event on the lens
+   function handleMouseMove(event) {
+     // Get the position of the lens
+     const lensX = event.clientX - lens.offsetWidth / 2;
+     const lensY = event.clientY - lens.offsetHeight / 2;
+
+     // Set the position of the lens
+     lens.style.left = `${lensX}px`;
+     lens.style.top = `${lensY}px`;
+
+     // Calculate the position of the zoomed image
+     const zoomedX = (lensX / image.offsetWidth) * 100;
+     const zoomedY = (lensY / image.offsetHeight) * 100;
+
+     // Update the transform property of the image to achieve the magnifying effect
+     image.style.transform = `scale(2) translate(${zoomedX}px, ${zoomedY}px)`;
+
+     // Show the zoomed image
+     document.querySelector('.zoomed-image').style.opacity = 1;
+   }
+
+   // Add mouseleave event listener to the lens
+   lens.addEventListener('mouseleave', handleMouseLeave);
+
+   // Function to handle mouseleave event on the lens
+   function handleMouseLeave() {
+     // Reset the position of the lens
+     lens.style.left = '';
+     lens.style.top = '';
+
+     // Reset the transform property of the image
+     image.style.transform = '';
+
+     // Hide the zoomed image
+     document.querySelector('.zoomed-image').style.opacity = 0;
+   }
+ </script>
 
        <div class="background-text">311</div>
      </div>
@@ -108,7 +211,7 @@
                 top: 0;
                 left: 0;
                 width: 100%;
-              
+
                 background-image: url('air-particle.png'); /* Replace with your air particle image */
                 background-size: cover;
                 opacity: 0;
@@ -165,21 +268,50 @@
          transform: translate(-50%, -50%);
          font-size: 48px;
          font-weight: bold;
-         animation: bounceText 2s ease-in-out infinite alternate;
-       }
 
-       /* Animation keyframes for bouncing text */
-       @keyframes bounceText {
-         0% {
-           transform: translate(-50%, -50%) translateY(0);
-         }
-         50% {
-           transform: translate(-50%, -50%) translateY(-20px);
-         }
-         100% {
-           transform: translate(-50%, -50%) translateY(0);
-         }
-       }
+         animation: moveDot2 4s infinite linear alternate;
+
+    }
+
+    /* Animation keyframes for bouncing text */
+    @keyframes moveDot2 {
+      0% {
+        top: -10px;
+        opacity: 0;
+      }
+      50% {
+        top: calc(100vh + 10px);
+        opacity: 0.1; /* Change opacity to 0.3 at 50% of animation duration */
+      }
+      100% {
+        top: -10px;
+        opacity: 0.2;
+      }
+    }
+
+          /* Animation keyframes for bouncing text */
+          @keyframes bounceText {
+            0% {
+              transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+              opacity: 0;
+            }
+            25% {
+              transform: translate(-50%, -50%) rotate(90deg) scale(1);
+              opacity: 1;
+            }
+            50% {
+              transform: translate(-50%, -50%) rotate(180deg) scale(0.8);
+              opacity: 0;
+            }
+            75% {
+              transform: translate(-50%, -50%) rotate(270deg) scale(1);
+              opacity: 1;
+            }
+            100% {
+              transform: translate(-50%, -50%) rotate(360deg) scale(0.8);
+              opacity: 0;
+            }
+          }
 
             </style>
 

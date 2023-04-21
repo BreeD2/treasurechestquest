@@ -4,9 +4,19 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-
+    cursor: url('cursor/mglass2.png'), auto;
     font-family: 'Neue Haas Grotesk Display', sans-serif;
-     /* Use fallback font(s) after custom font */
+    /* Use fallback font(s) after custom font */
+}
+
+.zoomable-image {
+  width: 10%; /* Set the initial size of the image */
+  margin-left:90%;
+  transition: transform 0.3s ease-in-out; /* Add a transition effect for smooth animation */
+}
+
+.zoomable-image:hover {
+  transform: scale(1.5); /* Apply zoom effect on hover by increasing the scale */
 }
 
 @font-face {
@@ -218,6 +228,13 @@ body {
   margin-bottom: 50%:
 }
 
+.clue:hover {
+  margin-bottom: 10%;
+  color:cyan;
+  font-size: 20px;
+
+  margin-bottom: 50%:
+}
 
 @font-face {
     font-family: 'Neue Haas Grotesk Display';
@@ -260,4 +277,33 @@ body {
         opacity: 1;
     }
 }
-/
+
+animation: moveDot 6s infinite linear alternate;
+}
+
+/* Animation keyframes for bouncing text (air unit) */
+@keyframes moveDot {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(0.8) translateY(-50px); opacity: 0; }
+  25% { transform: translate(-50%, -50%) rotate(90deg) scale(1) translateY(-25px); opacity: 1; }
+  50% { transform: translate(-50%, -50%) rotate(180deg) scale(0.8) translateY(0); opacity: 1; }
+  75% { transform: translate(-50%, -50%) rotate(270deg) scale(1) translateY(-25px); opacity: 1; }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(0.8) translateY(-50px); opacity: 0; }
+}
+/* Container for magnifying glass */
+  .magnifying-glass {
+height:30%
+  }
+
+
+
+
+  .lens {
+    /* Add this line to set a larger size for the lens */
+    width: 200px;
+    height: 200px;
+    /* Add this line to set a transparent background */
+    background: transparent;
+    /* Remove the border-radius property */
+    border-radius: 0;
+    /* ... (your other styles for the lens element) */
+  }
