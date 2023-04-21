@@ -1,0 +1,272 @@
+body {
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Neue Haas Grotesk Display', sans-serif;
+     /* Use fallback font(s) after custom font */
+}
+
+@font-face {
+    font-family: 'Neue Haas Grotesk Display';
+    src: url('neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBoldItalic.ttf');
+    /* Add more font formats and paths if needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.chest-container {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+    animation: shake 2s ease infinite;
+}
+
+.chest {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.border {
+    /* Your border styles */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid black; /* Example border style */
+    z-index: 1; /* Ensure the border is positioned on top of other elements inside the chest */
+}
+
+.chest:hover {
+    animation-play-state: paused;
+}
+
+.chest-lid {
+    width: 100%;
+    height: 50%;
+    background-color: magenta;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    border-radius: 20px 20px 0 0;
+}
+
+.chest-lid:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: cyan;
+    position: absolute;
+    top: -50%;
+    left: 0;
+    transform-origin: top;
+}
+
+.lock {
+    width: 30px;
+    height: 30px;
+    background-color: #ff4800;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.handle {
+    width: 50px;
+    height: 10px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+}
+
+.handle:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #ffd700;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    border-radius: 50%;
+}
+
+.treasure {
+    width: 80px;
+    height: 80px;
+    background-color: #ffd700;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 50%;
+}
+
+.chest.clicked .treasure {
+    opacity: 1;
+}
+
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(-10deg); }
+    20% { transform: rotate(10deg); }
+    30% { transform: rotate(-10deg); }
+    40% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.chest-container {
+    /* Your container styles */
+}
+
+.chest {
+    /* Your chest styles */
+    position: relative;
+}
+
+.chest-lid {
+    /* Your chest lid styles */
+    animation: shake 2s infinite; /* Add the shake animation with 2 seconds duration and infinite loop */
+    animation-timing-function: linear; /* Linear timing function for smooth shaking */
+}
+
+.lock {
+    /* Your lock styles */
+}
+
+
+
+.border-left {
+    left: 0;
+}
+
+.border-right {
+    right: 0;
+}
+
+
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  70% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  90% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+.clue {
+  color:cyan;
+  font-size: 20px;
+  width: 10%:
+}
+
+@font-face {
+    font-family: 'Neue Haas Grotesk Display';
+    src: url('path/to/neue-haas-grotesk-display.woff2') format('woff2'),
+         url('path/to/neue-haas-grotesk-display.woff') format('woff'),
+         url('path/to/neue-haas-grotesk-display.ttf') format('truetype');
+    /* Add more font formats and paths if needed */
+    font-weight: normal;
+    font-style: normal;
+}
+.box-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-inner h1 {
+    color: #fff;
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #e74c3c;
+    opacity: 0;
+    animation: confetti 1s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes confetti {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 1;
+    }
+}
+/* Define confetti animation */
+   @keyframes confetti {
+       0% {
+           transform: translateY(0) rotate(0deg);
+       }
+       100% {
+           transform: translateY(100vh) rotate(720deg);
+       }
+   }
+
+   /* Add confetti animation class to .lock element */
+   .confetti {
+       animation: confetti 3s ease infinite;
+   }

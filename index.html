@@ -1,0 +1,85 @@
+
+<html lang="en-US">
+<html>
+ <head>
+
+   <title>Three-Letter Word Assigner</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+   <center>
+
+     <meta name="viewpoint" content="width-device-width, initial-scale=1.0">
+     <meta charset="UTF-8">
+        <link rel="stylesheet"href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+     body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+     .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+     .fa-anchor,.fa-coffee {font-size:200px}menu {display: none}
+     </style>
+<script src="//code.tidio.co/ysmmcjau1sm1we7brxeshemvjiomtftp.js" async></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.chest-container').addEventListener('click', function() {
+                this.querySelector('.chest').classList.toggle('clicked');
+            });
+        });
+    </script>
+</head>
+<body>
+  <div class="container">
+          <div class="box" onclick="openBox()">
+            <div class="clue">Venture forth towards the unit that cools, where the numbers three-one-one rule. Seek the treasure that's hidden near, where you can feel the excitement draw near.</div>
+          </div>
+          <div class="chest-container">
+              <div class="chest">
+                  <div class="chest-lid">
+                      <div class="lock" ></div>
+                  </div>
+              </div>
+              <div class="border-left">
+                  <div class="circle" onclick="dropConfetti()"></div>
+              </div>
+              <div class="border-right">
+                  <div class="circle" onclick="dropConfetti()"></div>
+              </div>
+          </div>
+      </div>
+      <script src="script.js"></script>
+  </body>
+
+  <script>
+      function openBox() {
+          // Code to open the box goes here
+          console.log('Box opened!');
+      }
+
+      function dropConfetti() {
+          // Code to trigger confetti animation goes here
+          console.log('Confetti dropped!');
+          // Add confetti animation class to lock element
+          document.querySelector('.lock').classList.add('confetti');
+      }
+  </script>
+
+
+  <script>
+  const chest = document.querySelector('.chest');
+  const circle = document.querySelector('.circle');
+
+  circle.addEventListener('click', () => {
+    chest.style.animation = 'openChest 2s linear forwards';
+  });
+</script>
