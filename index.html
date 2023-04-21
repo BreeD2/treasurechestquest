@@ -40,25 +40,148 @@
 </head>
 <body>
   <div class="container">
-          <div class="box" onclick="openBox()">
-            <div class="clue">Venture forth towards the unit that cools, where the numbers three-one-one rule. Seek the treasure that's hidden near, where you can feel the excitement draw near.</div>
-          </div>
-          <div class="chest-container">
-              <div class="chest">
-                  <div class="chest-lid">
-                      <div class="lock" ></div>
-                  </div>
-              </div>
-              <div class="border-left">
-                  <div class="circle" onclick="dropConfetti()"></div>
-              </div>
-              <div class="border-right">
-                  <div class="circle" onclick="dropConfetti()"></div>
-              </div>
-          </div>
-      </div>
-      <script src="script.js"></script>
-  </body>
+       <div class="box" onclick="openBox()">
+         <div class="clue">Venture forth towards the unit that cools, where the numbers three-one-one rule. Seek the treasure that's hidden near, where you can feel the excitement draw near.</div>
+       </div>
+       <div class="chest-container">
+         <div class="chest">
+           <div class="chest-lid">
+             <div class="lock"></div>
+           </div>
+         </div>
+         <div class="border-left">
+           <div class="circle" onclick="dropConfetti()"></div>
+         </div>
+         <div class="border-right">
+           <div class="circle" onclick="dropConfetti()"></div>
+         </div>
+         <div class="air-particle"></div>
+         <div class="air-particle"></div>
+         <div class="air-particle"></div>
+       </div>
+
+       <div class="background-text">311</div>
+     </div>
+     <script src="script.js"></script>
+     <script>
+       // JavaScript to create air particles and animate them
+       const container = document.querySelector('.container');
+       const particleCount = 100; // Number of air particles to create
+
+       for (let i = 0; i < particleCount; i++) {
+         const particle = document.createElement('div');
+         particle.classList.add('air-particle');
+         container.appendChild(particle);
+         animateAirParticle(particle);
+       }
+
+       function animateAirParticle(particle) {
+         // Set initial position and opacity
+         particle.style.top = Math.random() * 100 + '%';
+         particle.style.left = Math.random() * 100 + '%';
+         particle.style.opacity = Math.random();
+
+         // Animate particle with a transition to new position and opacity
+         setTimeout(() => {
+           particle.style.top = Math.random() * 100 + '%';
+           particle.style.left = Math.random() * 100 + '%';
+           particle.style.opacity = Math.random();
+           animateAirParticle(particle);
+         }, Math.random() * 5000 + 1000); // Randomize animation duration between 1s and 6s
+       }
+
+       function openBox() {
+         // Function to open the treasure chest
+         alert('You found the treasure! Congratulations!');
+       }
+
+       function dropConfetti() {
+         // Function to drop confetti
+         alert('Confetti dropped! Celebrate the treasure hunt!');
+       }
+     </script>
+
+     <style>
+     /* CSS for air particles */
+            .air-particle {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+              
+                background-image: url('air-particle.png'); /* Replace with your air particle image */
+                background-size: cover;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+
+
+            /* Animation keyframes for air particles */
+            @keyframes float {
+                0% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+            .dot {
+               position: absolute;
+               width: 10px;
+               height: 10px;
+               border-radius: 50%;
+               background-color: cyan;
+               animation-name: moveDot;
+               animation-timing-function: linear;
+               animation-iteration-count: infinite;
+              animation-direction: alternate;
+               opacity: 0;
+             }
+
+             @keyframes moveDot {
+               0% {
+                 top: -10px;
+                 opacity: 0;
+               }
+               50% {
+                 top: calc(100vh + 10px);
+                 opacity: 0.1; /* Change opacity to 0.3 at 50% of animation duration */
+               }
+               100% {
+                 top: -10px;
+                 opacity: 0.2;
+               }
+             }
+
+             /* CSS for bouncing text */
+       .background-text {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         color:magenta;
+         transform: translate(-50%, -50%);
+         font-size: 48px;
+         font-weight: bold;
+         animation: bounceText 2s ease-in-out infinite alternate;
+       }
+
+       /* Animation keyframes for bouncing text */
+       @keyframes bounceText {
+         0% {
+           transform: translate(-50%, -50%) translateY(0);
+         }
+         50% {
+           transform: translate(-50%, -50%) translateY(-20px);
+         }
+         100% {
+           transform: translate(-50%, -50%) translateY(0);
+         }
+       }
+
+            </style>
 
   <script>
       function openBox() {
@@ -72,6 +195,20 @@
           // Add confetti animation class to lock element
           document.querySelector('.lock').classList.add('confetti');
       }
+  </script>
+
+  <script>
+    const dotCount = 500; // Number of dots to generate
+    const body = document.body;
+    for (let i = 0; i < dotCount; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      dot.style.top = `${Math.random() * 100}vh`; // Set random vertical position
+      dot.style.left = `${Math.random() * 100}vw`; // Set random horizontal position
+      dot.style.opacity = Math.random(); // Set random opacity
+      dot.style.animationDuration = `${Math.random() * 5 + 1}s`; // Set random animation duration
+      body.appendChild(dot);
+    }
   </script>
   <style>
   body {

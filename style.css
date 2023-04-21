@@ -3,7 +3,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    width: 100%;
+
     font-family: 'Neue Haas Grotesk Display', sans-serif;
      /* Use fallback font(s) after custom font */
 }
@@ -217,6 +218,7 @@ body {
   margin-bottom: 50%:
 }
 
+
 @font-face {
     font-family: 'Neue Haas Grotesk Display';
     src: url('path/to/neue-haas-grotesk-display.woff2') format('woff2'),
@@ -258,17 +260,4 @@ body {
         opacity: 1;
     }
 }
-/* Define confetti animation */
-   @keyframes confetti {
-       0% {
-           transform: translateY(0) rotate(0deg);
-       }
-       100% {
-           transform: translateY(100vh) rotate(720deg);
-       }
-   }
-
-   /* Add confetti animation class to .lock element */
-   .confetti {
-       animation: confetti 3s ease infinite;
-   }
+/
