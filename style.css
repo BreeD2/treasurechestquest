@@ -1,5 +1,5 @@
 body {
-    background: black;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,9 +210,11 @@ body {
 }
 
 .clue {
+  margin-bottom: 10%;
   color:cyan;
   font-size: 20px;
-  width: 10%:
+
+  margin-bottom: 50%:
 }
 
 @font-face {
