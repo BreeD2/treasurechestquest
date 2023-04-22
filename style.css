@@ -84,6 +84,75 @@ body {
     transform-origin: top;
 }
 
+.chest {
+  position: relative;
+}
+
+.border-left,
+.border-right {
+  position: absolute;
+  top: 20;
+  bottom: 0;
+  width: 10px;
+  background-color: white;
+  height: 35%
+}
+
+.border-left {
+  left: 0;
+}
+
+.border-right {
+  right: 0;
+}
+
+#animated-image {
+  width: 20%;
+  animation: shake 2s infinite; /* Add the shake animation with 2 seconds duration and infinite loop */
+  animation-timing-function: linear; /* Linear timing function for smooth shaking */;
+  z-index: 5%;
+  opacity: 1; /* Set full opacity */
+}
+
+
+@keyframes shakeit {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#animated-image:hover {
+
+  color: red;
+
+ filter: brightness(150%); /* Add brightness filter to make image brighter on hover */
+}
+
+
+
+@keyframes hover-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#animated-image:active {
+  transform: scale(1.5);
+}
+
+
 .lock {
     width: 30px;
     height: 30px;
@@ -224,7 +293,8 @@ body {
   margin-bottom: 10%;
   color:cyan;
   font-size: 20px;
-
+  background-color: magenta;
+  border:5px dashed #ff4800;
   margin-bottom: 50%:
 }
 

@@ -39,37 +39,63 @@
     </script>
 </head>
 <body>
-  <div class="container">
-    
-         <div class="clue">Venture forth towards the unit that cools, where the numbers three-one-one rule. Seek the treasure that's hidden near, where you can feel the excitement draw near.</div>
-       </div>
-       <div class="chest-container">
-         <div class="chest">
-           <div class="chest-lid">
-             <div class="lock"></div>
-           </div>
-         </div>
-         <div class="border-left">
-           <div class="circle" onclick="dropConfetti()"></div>
-         </div>
-         <div class="border-right">
-           <div class="circle" onclick="dropConfetti()"></div>
-         </div>
-         <div class="air-particle"></div>
-         <div class="air-particle"></div>
-         <div class="air-particle"></div>
-       </div>
-       <div class="magnifying-glass">
-   <div class="magnifying-glass-lens"></div>
-   <div class="magnifying-glass-handle"></div>
-   <div class="image-container">
-     <img src="mglass2.png" alt="Zoomable Image" class="zoomable-image">
-<!-- Replace with your own image URL -->
-     <div class="custom-cursor">
-   <!-- Content of the element with the custom cursor -->
 
-   </div>
- </div>
+  <div class="container">
+     <div class="air-filter">
+    <div class="clue">Venture forth towards the unit that cools, where the numbers three-one-one rule. Seek the treasure that's hidden near, where you can feel the excitement draw near.</div>
+  </div>
+
+  <!-- Add an audio element with the source of your hover sound file and give it an ID -->
+  <audio id="hover-sound">
+    <source src="shake.mp3" type="audio/wav">
+  </audio>
+
+  <!-- Add an audio element with the source of your click sound file and give it an ID -->
+  <audio id="click-sound">
+    <source src="shake.mp3" type="audio/wav">
+  </audio>
+
+  <!-- Add an image element that you want to trigger the hover and click sounds -->
+  <img id="animated-image" src="chest.png" alt="animated-image">
+
+  <div class="air-particle"></div>
+  <div class="air-particle"></div>
+  <div class="air-particle"></div>
+  </div>
+  <div class="magnifying-glass">
+  <div class="magnifying-glass-lens"></div>
+  <div class="magnifying-glass-handle"></div>
+  <div class="image-container">
+    <img src="mglass2.png" alt="Zoomable Image" class="zoomable-image">
+    <!-- Replace with your own image URL -->
+    <div class="custom-cursor">
+      <!-- Content of the element with the custom cursor -->
+    </div>
+  </div>
+  </div>
+  <script>
+  // Get the hover sound and image element by their IDs
+  const hoverSound = document.getElementById('hover-sound');
+  const myImage = document.getElementById('animated-image');
+
+  // Add a "mouseover" event listener to the image element
+  myImage.addEventListener('mouseover', function() {
+    // Play the hover sound
+    hoverSound.play();
+  });
+
+  // Get the click sound and image element by their IDs
+  const clickSound = document.getElementById('click-sound');
+  const myImage2 = document.getElementById('animated-image'); // Change variable name to avoid conflict
+
+  // Add a "click" event listener to the image element
+  myImage2.addEventListener('click', function() { // Use the updated variable name
+    // Play the click sound
+    clickSound.play();
+  });
+  </script>
+
+
 
  <script>
    // Get the lens and image elements
@@ -236,13 +262,25 @@
                width: 10px;
                height: 10px;
                border-radius: 50%;
-               background-color: cyan;
+               background-color: white;
                animation-name: moveDot;
                animation-timing-function: linear;
                animation-iteration-count: infinite;
               animation-direction: alternate;
                opacity: 0;
              }
+             .dot:hover {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: white;
+                animation-name: moveDot;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+               animation-direction: alternate;
+                opacity: 1;
+              }
 
              @keyframes moveDot {
                0% {
@@ -255,7 +293,7 @@
                }
                100% {
                  top: -10px;
-                 opacity: 0.2;
+                 opacity: 0.3;
                }
              }
 
