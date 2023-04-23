@@ -237,6 +237,51 @@
      </script>
 
      <style>
+
+
+     .down-arrow {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          color: cyan;
+          transform: translate(-50%, -50%);
+          font-size: 48px;
+          font-weight: bold;
+          width: 5%;
+          animation: moveDot3 5s infinite linear ;
+        }
+
+        .down-arrow:hover {
+
+
+             opacity: 1;
+
+
+           }
+        /* Animation keyframes for bouncing text */
+        @keyframes moveDot3 {
+          0% {
+            top: 50%;
+            opacity: 0;
+          }
+
+          100% {
+            top: 102%;
+            opacity: 1;
+          }
+        }
+
+        @keyframes moveDot3 {
+          0% {
+            top: 50%;
+            opacity: 0;
+          }
+
+          100% {
+            top: 102%;
+            opacity: 1;
+          }
+        }
      /* CSS for air particles */
             .air-particle {
                 position: absolute;
