@@ -79,6 +79,30 @@
     </div>
   </div>
   </div>
+
+  <script>
+  var zoomableImage = document.querySelector('.zoomable-image');
+var offsetX = 0;
+var offsetY = 0;
+var isDragging = false;
+
+zoomableImage.addEventListener('mousedown', function(event) {
+  offsetX = event.clientX - zoomableImage.offsetLeft;
+  offsetY = event.clientY - zoomableImage.offsetTop;
+  isDragging = true;
+});
+
+document.addEventListener('mousemove', function(event) {
+  if (isDragging) {
+    zoomableImage.style.left = (event.clientX - offsetX) + 'px';
+    zoomableImage.style.top = (event.clientY - offsetY) + 'px';
+  }
+});
+
+document.addEventListener('mouseup', function() {
+  isDragging = false;
+});
+</script>
   <script>
   // Get the hover sound and image element by their IDs
   const hoverSound = document.getElementById('hover-sound');
@@ -450,7 +474,10 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      cursor: url('mglass2.png'), auto;
+
+    cursor: url('glass.png'), auto;
+
+
       font-family: 'Neue Haas Grotesk Display', sans-serif;
 
       /* Use fallback font(s) after custom font */
