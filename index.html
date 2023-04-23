@@ -45,6 +45,8 @@
     <div class="clue">Venture forth towards the unit that cools, where the numbers three-one-one rule. Seek the treasure that's hidden near, where you can feel the excitement draw near.</div>
   </div>
 
+
+
   <!-- Add an audio element with the source of your hover sound file and give it an ID -->
   <audio id="hover-sound">
     <source src="shake.mp3" type="audio/wav">
@@ -65,11 +67,15 @@
   <div class="magnifying-glass">
   <div class="magnifying-glass-lens"></div>
   <div class="magnifying-glass-handle"></div>
+
   <div class="image-container">
-    <img src="mglass2.png" alt="Zoomable Image" class="zoomable-image">
+    <img src="downarrow2.png" alt="Down Arrow" class="down-arrow"style="margin:0%;">
+
+    <img src="glass.png" alt="Zoomable Image" class="zoomable-image">
     <!-- Replace with your own image URL -->
     <div class="custom-cursor">
       <!-- Content of the element with the custom cursor -->
+
     </div>
   </div>
   </div>
@@ -306,8 +312,10 @@
          transform: translate(-50%, -50%);
          font-size: 48px;
          font-weight: bold;
+         opacity:0%;
+          animation: moveDot3 5s infinite linear ;
+          animation-delay: 2s;
 
-         animation: moveDot2 4s infinite linear alternate;
 
     }
 
@@ -387,8 +395,9 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      cursor: url('cursor/mglass2.png'), auto;
+      cursor: url('mglass2.png'), auto;
       font-family: 'Neue Haas Grotesk Display', sans-serif;
+
       /* Use fallback font(s) after custom font */
   }
       </style>
