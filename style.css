@@ -110,8 +110,8 @@ body {
   width: 20%;
   animation: shake 2s infinite; /* Add the shake animation with 2 seconds duration and infinite loop */
   animation-timing-function: linear; /* Linear timing function for smooth shaking */;
-  z-index: 5%;
-  opacity: 1; /* Set full opacity */
+  z-index: 5;
+
 }
 
 
