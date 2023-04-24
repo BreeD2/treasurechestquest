@@ -15,13 +15,7 @@
   transform: scale(1.5); /* Apply zoom effect on hover by increasing the scale */
 }
 
-@font-face {
-    font-family: 'Neue Haas Grotesk Display';
-    src: url('neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBoldItalic.ttf');
-    /* Add more font formats and paths if needed */
-    font-weight: bold;
-    font-style: normal;
-}
+
 
 
 .chest-container {
@@ -289,7 +283,7 @@
   margin-bottom: 10%;
   color:cyan;
   font-size: 20px;
-  background-color: magenta;
+  background-color: #ff00a2;
   border:5px dashed #ff4800;
   margin-bottom: 50%:
 }
@@ -298,7 +292,7 @@
 
   color:#ff4800;
   background-color: cyan;
-  border:5px dashed magenta;
+  border:5px dashed #ff00a2;
 
 }
 
