@@ -68,10 +68,34 @@
 
   <div class="image-container">
     <img src="downarrow2.png" alt="Down Arrow" class="down-arrow"style="margin:0%;">
-
+ <img src="glass.png" alt="Zoomable Image" class="zoomable-image">
 
   </div>
   </div>
+
+ <script>
+  var zoomableImage = document.querySelector('.zoomable-image');
+var offsetX = 0;
+var offsetY = 0;
+var isDragging = false;
+
+zoomableImage.addEventListener('mousedown', function(event) {
+  offsetX = event.clientX - zoomableImage.offsetLeft;
+  offsetY = event.clientY - zoomableImage.offsetTop;
+  isDragging = true;
+});
+
+document.addEventListener('mousemove', function(event) {
+  if (isDragging) {
+    zoomableImage.style.left = (event.clientX - offsetX) + 'px';
+    zoomableImage.style.top = (event.clientY - offsetY) + 'px';
+  }
+});
+
+document.addEventListener('mouseup', function() {
+  isDragging = false;
+});
+</script>
 
   <script>
   var zoomableImage = document.querySelector('.zoomable-image');
