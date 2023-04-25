@@ -198,10 +198,12 @@ document.addEventListener('mouseup', function() {
           left: 50%;
           color: #00d8ff;
           transform: translate(-50%, -50%);
-          font-size: 48px;
+          font-size: 40vw;
           font-weight: bold;
-          width: 5%;
+          width: 10vw;
+          opacity: 0%;
           animation: moveDot3 5s infinite linear ;
+            animation-delay: 2s;
         }
 
         .down-arrow:hover {
@@ -268,28 +270,43 @@ document.addEventListener('mouseup', function() {
                border-radius: 50%;
                background-color: white;
                animation-name: moveDot;
-               animation-timing-function: linear;
+               animation-timing-function: ease-in;
                animation-iteration-count: infinite;
               animation-direction: alternate;
                opacity: 0;
                z-index: 1;
+               animation-duration: 10s;
+
              }
              .dot:hover {
 
                 opacity: 1;
               }
 
-             @keyframes moveDot {
-               0% {
-                   transform: translateY(-500px) rotate(0deg);
-                   opacity: 0.6;
-               }
-               100% {
-                   transform: translateY(100px) rotate(720deg);
-                   opacity: 0.6;
-                   background-color: #e74c3c;
-               }
-             }
+              @keyframes moveDot {
+        0% {
+          transform: translateY(-500px) rotate(0deg);
+          opacity: 1;
+          background-color: #00d8ff; /* Blue */
+        }
+        50% {
+          background-color: #ff00ae;
+          opacity: 1%:
+        }
+        100% {
+          transform: translateY(100px) rotate(720deg);
+          opacity: 1;
+          background-color: #ff4800; /* orange */
+        }
+      }
+
+
+
+
+
+
+
+
 
              /* CSS for bouncing text */
        .background-text {
@@ -298,11 +315,12 @@ document.addEventListener('mouseup', function() {
          left: 50%;
          color: #ff00a2;
          transform: translate(-50%, -50%);
-         font-size: 48px;
+         font-size: 10vw;
          font-weight: bold;
          opacity:0%;
           animation: moveDot3 5s infinite linear ;
-          animation-delay: 2s;
+
+
 
 
     }
