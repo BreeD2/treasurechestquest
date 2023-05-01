@@ -249,7 +249,7 @@ document.addEventListener('mouseup', function() {
         }
         50% {
           background-color: #ff00ae;
-          opacity: 1%:
+          opacity: 1:
         }
         100% {
           transform: translateY(100px) rotate(720deg);
@@ -361,20 +361,21 @@ document.addEventListener('mouseup', function() {
       width: 100%;
 font-family: 'Neue Haas Grotesk Display', sans-serif;
     cursor: url('glass.png'), auto;
-    .dot {
-position: absolute;
-width: 10px;
-height: 10px;
-border-radius: 50%;
-background-color: #00d8ff;
-animation-name: moveDot;
-animation-timing-function: ease-in;
-animation-iteration-count: infinite;
-animation-direction: alternate;
-opacity: 0;
-z-index: -1;
-animation-duration: 10s;
-}
+  }
+  .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #00d8ff;
+    animation-name: moveDot;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    opacity: 0;
+    z-index: -1;
+    animation-duration: 60s;
+  }
 
 
 
