@@ -11,6 +11,7 @@
 
 
 
+
 .zoomable-image:hover {
   transform: scale(1.5); /* Apply zoom effect on hover by increasing the scale */
 }
@@ -208,6 +209,7 @@ m
   font-size:5vw;
   background-color: #ff00a2;
   border:5px dashed #ff4800;
+  z-index: 2;
 
 
 }

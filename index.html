@@ -40,11 +40,11 @@
 </head>
 <body>
 
-  <div class="container">
+
      <div class="air-filter">
     <div class="clue">Venture forth towards the unit that cools, where the numbers three-one-one rule. Seek the treasure that's hidden near, where you can feel the excitement draw near.</div>
-  </div>
 
+<div class="container"></div>
 
 
   <!-- Add an audio element with the source of your hover sound file and give it an ID -->
@@ -151,43 +151,7 @@ document.addEventListener('mouseup', function() {
        <div class="background-text">311</div>
      </div>
      <script src="script.js"></script>
-     <script>
-       // JavaScript to create air particles and animate them
-       const container = document.querySelector('.container');
-       const particleCount = 100; // Number of air particles to create
 
-       for (let i = 0; i < particleCount; i++) {
-         const particle = document.createElement('div');
-         particle.classList.add('air-particle');
-         container.appendChild(particle);
-         animateAirParticle(particle);
-       }
-
-       function animateAirParticle(particle) {
-         // Set initial position and opacity
-         particle.style.top = Math.random() * 100 + '%';
-         particle.style.left = Math.random() * 100 + '%';
-         particle.style.opacity = Math.random();
-
-         // Animate particle with a transition to new position and opacity
-         setTimeout(() => {
-           particle.style.top = Math.random() * 100 + '%';
-           particle.style.left = Math.random() * 100 + '%';
-           particle.style.opacity = Math.random();
-           animateAirParticle(particle);
-         }, Math.random() * 5000 + 1000); // Randomize animation duration between 1s and 6s
-       }
-
-       function openBox() {
-         // Function to open the treasure chest
-         alert('You found the treasure! Congratulations!');
-       }
-
-       function dropConfetti() {
-         // Function to drop confetti
-         alert('Confetti dropped! Celebrate the treasure hunt!');
-       }
-     </script>
 
      <style>
 
@@ -224,6 +188,16 @@ document.addEventListener('mouseup', function() {
             top: 102%;
             opacity: 1;
           }
+        }
+
+        .container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          background-color: #000;
         }
 
         @keyframes moveDot3 {
@@ -263,31 +237,15 @@ document.addEventListener('mouseup', function() {
                     transform: translateY(0);
                 }
             }
-            .dot {
-               position: absolute;
-               width: 10px;
-               height: 10px;
-               border-radius: 50%;
-               background-color: white;
-               animation-name: moveDot;
-               animation-timing-function: ease-in;
-               animation-iteration-count: infinite;
-              animation-direction: alternate;
-               opacity: 0;
-               z-index: 1;
-               animation-duration: 10s;
 
-             }
-             .dot:hover {
 
-                opacity: 1;
-              }
 
               @keyframes moveDot {
         0% {
           transform: translateY(-500px) rotate(0deg);
           opacity: 1;
-          background-color: #00d8ff; /* Blue */
+          background-color: #00d8ff; /* Blue */;
+
         }
         50% {
           background-color: #ff00ae;
@@ -382,7 +340,7 @@ document.addEventListener('mouseup', function() {
   </script>
 
   <script>
-    const dotCount = 200; // Number of dots to generate
+    const dotCount = 311; // Number of dots to generate
     const body = document.body;
     for (let i = 0; i < dotCount; i++) {
       const dot = document.createElement('div');
@@ -403,6 +361,20 @@ document.addEventListener('mouseup', function() {
       width: 100%;
 font-family: 'Neue Haas Grotesk Display', sans-serif;
     cursor: url('glass.png'), auto;
+    .dot {
+position: absolute;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: #00d8ff;
+animation-name: moveDot;
+animation-timing-function: ease-in;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+opacity: 0;
+z-index: -1;
+animation-duration: 10s;
+}
 
 
 
