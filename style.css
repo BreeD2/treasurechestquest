@@ -206,19 +206,19 @@ m
 .clue {
   margin-bottom: 10%;
   color:#00d8ff;
-  font-size:5vw;
+  font-size:6vw;
   background-color: #ff00a2;
-  border:5px dashed #ff4800;
-  z-index: 2;
+  border:7px dashed #ff4800;
+
 
 
 }
 
 .clue:hover {
-
+font-size:6vw;
   color:#ff4800;
   background-color: #00d8ff;
-  border:5px dashed #ff00a2;
+  border:7px dashed #ff00a2;
 
 }
 
